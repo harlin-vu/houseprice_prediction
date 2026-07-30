@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Huong Linh Vu | Portfolio 🌿✨</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-grid-color: #f0fdf4;
+            --grid-line: #dcfce7;
+            --main-mint: #86efac;
+            --accent-green: #16a34a;
+            --dark-green: #14532d;
+            --pastel-card: rgba(255, 255, 255, 0.93);
+            --card-border: #86efac;
+            --text-color: #166534;
+            --glow-shadow: 0 8px 20px rgba(34, 197, 94, 0.15);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'M PLUS Rounded 1c', sans-serif;
+            background-color: var(--bg-grid-color);
+            /* Nền caro Grid Paper màu xanh Mint nhẹ nhàng */
+            background-image: 
+                linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+                linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
+            background-size: 24px 24px;
+            color: var(--text-color);
+            line-height: 1.7;
+            padding: 30px 15px;
+        }
+
+        .container {
+            max-width: 820px;
+            margin: 0 auto;
+        }
+
+        /* Header / Hero Section */
+        header {
+            background: var(--pastel-card);
+            border: 3px solid var(--card-border);
+            padding: 35px 30px;
+            border-radius: 28px;
+            box-shadow: var(--glow-shadow);
+            margin-bottom: 25px;
+            text-align: center;
+            position: relative;
+        }
+
+        .header-title-box {
+            display: inline-block;
+            background: #dcfce7;
+            border: 2px dashed var(--accent-green);
+            padding: 6px 20px;
+            border-radius: 20px;
+            font-size: 0.95rem;
+            color: var(--accent-green);
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        h1 {
+            color: var(--dark-green);
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 6px;
+        }
+
+        .subtitle {
+            font-size: 1.05rem;
+            color: var(--accent-green);
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .summary {
+            font-size: 0.98rem;
+            margin-bottom: 22px;
+            color: #15803d;
+            max-width: 680px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Interactive Buttons Style - Nút xanh bơ / mint dễ thương */
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .cute-btn {
+            background: #ffffff;
+            color: var(--dark-green);
+            padding: 10px 22px;
+            border-radius: 22px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.95rem;
+            border: 2px solid var(--main-mint);
+            box-shadow: 0 4px 10px rgba(134, 239, 172, 0.3);
+            transition: all 0.25s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .cute-btn:hover {
+            transform: translateY(-3px);
+            background: var(--main-mint);
+            color: var(--dark-green);
+            box-shadow: 0 6px 15px rgba(34, 197, 94, 0.35);
+        }
+
+        /* Section Cards */
+        section {
+            background: var(--pastel-card);
+            border: 3px solid var(--card-border);
+            padding: 30px 28px;
+            border-radius: 28px;
+            box-shadow: var(--glow-shadow);
+            margin-bottom: 25px;
+        }
+
+        h2 {
+            color: var(--dark-green);
+            font-size: 1.35rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Inner Cards */
+        .card {
+            background: #ffffff;
+            padding: 18px 20px;
+            border-radius: 20px;
+            margin-bottom: 18px;
+            border: 2px solid #dcfce7;
+            transition: transform 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+            border-color: var(--main-mint);
+        }
+
+        .card:last-child {
+            margin-bottom: 0;
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 4px;
+            flex-wrap: wrap;
+        }
+
+        .card-title {
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: var(--dark-green);
+        }
+
+        .card-subtitle {
+            font-size: 0.92rem;
+            color: var(--accent-green);
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .date-badge {
+            font-size: 0.8rem;
+            background: var(--dark-green);
+            color: #ffffff;
+            padding: 3px 12px;
+            border-radius: 12px;
+            font-weight: 700;
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        li {
+            position: relative;
+            padding-left: 24px;
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+            color: #166534;
+        }
+
+        li::before {
+            content: "🌱";
+            position: absolute;
+            left: 0;
+            top: 1px;
+            font-size: 0.85rem;
+        }
+
+        /* Badges / Tags */
+        .badge-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 12px;
+        }
+
+        .badge {
+            background: #dcfce7;
+            color: var(--dark-green);
+            padding: 4px 14px;
+            border-radius: 14px;
+            font-size: 0.82rem;
+            font-weight: 700;
+            border: 1px solid var(--main-mint);
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: var(--dark-green);
+            font-size: 0.9rem;
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <div class="header-title-box">✨ MATCHA MINT PORTFOLIO ✨</div>
+        <h1>Huong Linh Vu 🍃</h1>
+        <div class="subtitle">Business Analytics Student • Product Strategy & Sustainability</div>
+        <p class="summary">
+            Sinh viên năm 3 ngành Business Analytics tại Deakin University. Đam mê phân tích dữ liệu, chiến lược kinh doanh và sáng tạo giải pháp chuyển đổi số bền vững 🍀
+        </p>
+        <div class="contact-links">
+            <a href="mailto:vuhuonglinh17@gmail.com" class="cute-btn">✉️ Email Me</a>
+            <a href="https://www.linkedin.com/in/huong-linh-vu" target="_blank" class="cute-btn">🔗 LinkedIn</a>
+            <span class="cute-btn" style="cursor: default;">📍 Box Hill, VIC</span>
+        </div>
+    </header>
+
+    <section>
+        <h2>🌿 Dự Án Nổi Bật (Featured Projects)</h2>
+        
+        <div class="card">
+            <div class="card-header">
+                <span class="card-title">AfterCare - AI Post-Discharge Platform 💡</span>
+                <span class="date-badge">2026</span>
+            </div>
+            <div class="card-subtitle">Vietnamese Students HackAIthon 2026 — Merit Prize (Top 8 / 210) ✨</div>
+            <ul>
+                <li>Phụ trách Phân tích Nghiệp vụ (BA) & Chiến lược Sản phẩm cho nền tảng y tế ứng dụng AI.</li>
+                <li>Thực hiện nghiên cứu thị trường, phân tích đối thủ cạnh tranh và thu thập yêu cầu bài toán.</li>
+                <li>Định nghĩa các tính năng cốt lõi MVP và phối hợp cùng đội ngũ Developers.</li>
+                <li>Thuyết trình giải pháp chiến lược trước Mentors và Ban giám khảo cuộc thi.</li>
+            </ul>
+            <div class="badge-container">
+                <span class="badge">Business Analysis</span>
+                <span class="badge">Product Strategy</span>
+                <span class="badge">Market Research</span>
+                <span class="badge">Wireframing</span>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <span class="card-title">Dự Án "Share the Love, Send Warmth" 🎒</span>
+                <span class="date-badge">12/2023 - 02/2024</span>
+            </div>
+            <div class="card-subtitle">Logistics Team Leader — Volunteer Project</div>
+            <ul>
+                <li>Điều phối hoạt động logistics và làm việc với nhà cung cấp hỗ trợ trường học tại Y Tý, Lào Cai.</li>
+                <li>Giám sát quá trình phân phát vật phẩm quyên góp đến các em nhỏ.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section>
+        <h2>💼 Kinh Nghiệm Làm Việc (Experience)</h2>
+
+        <div class="card">
+            <div class="card-header">
+                <span class="card-title">Business Analytics Intern 📊</span>
+                <span class="date-badge">12/2024 - 02/2025</span>
+            </div>
+            <div class="card-subtitle">FPT Digital — Hà Nội, Việt Nam</div>
+            <ul>
+                <li>Nghiên cứu khung chuẩn ESG (GRI Standards) và thực tiễn báo cáo phát triển bền vững quốc tế.</li>
+                <li>Phân tích quy định ESG và xu hướng ngành Dược phẩm tại Việt Nam phục vụ tư vấn chiến lược.</li>
+                <li>Tổng hợp kết quả nghiên cứu và hỗ trợ xây dựng báo cáo gửi khách hàng.</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <span class="card-title">Project Team Intern 🌱</span>
+                <span class="date-badge">01/2026</span>
+            </div>
+            <div class="card-subtitle">VnF (Vietnam Food) — TP. Hồ Chí Minh, Việt Nam</div>
+            <ul>
+                <li>Hỗ trợ các sáng kiến phát triển bền vững liên quan đến giải pháp RetriV của VnF.</li>
+                <li>Hỗ trợ lưu trữ tài liệu, giao tiếp với các bên liên quan và điều phối dự án.</li>
+                <li>Tham gia hội thảo chuyên ngành để cập nhật xu hướng bền vững.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section>
+        <h2>🛠️ Kỹ Năng & Công Cụ (Skills & Tools)</h2>
+        <div style="margin-bottom: 16px;">
+            <strong style="color: var(--dark-green);">Kỹ Năng Phân Tích:</strong>
+            <div class="badge-container">
+                <span class="badge">Business Analysis</span>
+                <span class="badge">Market Research</span>
+                <span class="badge">BPMN & EER Modelling</span>
+                <span class="badge">Agile & Scrum</span>
+                <span class="badge">Project Coordination</span>
+            </div>
+        </div>
+        <div>
+            <strong style="color: var(--dark-green);">Công Cụ Chuyên Môn:</strong>
+            <div class="badge-container">
+                <span class="badge">Power BI</span>
+                <span class="badge">SQL</span>
+                <span class="badge">Python</span>
+                <span class="badge">Excel</span>
+                <span class="badge">PowerPoint</span>
+                <span class="badge">Miro</span>
+                <span class="badge">Canva</span>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>🎓 Học Vấn & Chứng Chỉ (Education)</h2>
+        <div class="card">
+            <div class="card-header">
+                <span class="card-title">Bachelor of Business Analytics 🏫</span>
+                <span class="date-badge">2024 - 2027</span>
+            </div>
+            <div class="card-subtitle">Deakin University — Burwood, VIC, Australia</div>
+        </div>
+        <div style="margin-top: 15px;">
+            <ul>
+                <li><strong>Power BI Essential Training</strong> — LinkedIn Learning (04/2025)</li>
+                <li><strong>Foundations of Digital Marketing & E-Commerce</strong> — Coursera (11/2023)</li>
+                <li><strong>ISO 22301:2019 Essentials of BCMS</strong> — Alison (10/2023)</li>
+                <li><strong>Business Analysis & Process Management</strong> — Coursera (10/2023)</li>
+            </ul>
+        </div>
+    </section>
+
+    <footer>
+        <p>🌱 Mint Matcha Portfolio • Built with 🍀 for GitHub Pages 🌱</p>
+    </footer>
+</div>
+
+</body>
+</html>
