@@ -14,7 +14,7 @@
             --main-mint: #86efac;
             --accent-green: #16a34a;
             --dark-green: #14532d;
-            --pastel-card: rgba(255, 255, 255, 0.93);
+            --pastel-card: rgba(255, 255, 255, 0.94);
             --card-border: #86efac;
             --text-color: #166534;
             --glow-shadow: 0 8px 20px rgba(34, 197, 94, 0.15);
@@ -29,7 +29,6 @@
         body {
             font-family: 'M PLUS Rounded 1c', sans-serif;
             background-color: var(--bg-grid-color);
-            /* Nền caro Grid Paper màu xanh Mint nhẹ nhàng */
             background-image: 
                 linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
                 linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
@@ -40,8 +39,36 @@
         }
 
         .container {
-            max-width: 820px;
+            max-width: 840px;
             margin: 0 auto;
+        }
+
+        /* Nút chuyển đổi ngôn ngữ Floating Language Switcher */
+        .lang-switch-container {
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 15px;
+        }
+
+        .lang-btn {
+            background: #ffffff;
+            border: 2px solid var(--main-mint);
+            color: var(--dark-green);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-weight: 800;
+            cursor: pointer;
+            font-size: 0.9rem;
+            box-shadow: 0 4px 10px rgba(134, 239, 172, 0.3);
+            transition: all 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .lang-btn:hover {
+            background: var(--main-mint);
+            transform: translateY(-2px);
         }
 
         /* Header / Hero Section */
@@ -86,12 +113,11 @@
             font-size: 0.98rem;
             margin-bottom: 22px;
             color: #15803d;
-            max-width: 680px;
+            max-width: 700px;
             margin-left: auto;
             margin-right: auto;
         }
 
-        /* Interactive Buttons Style - Nút xanh bơ / mint dễ thương */
         .contact-links {
             display: flex;
             justify-content: center;
@@ -142,12 +168,11 @@
             gap: 8px;
         }
 
-        /* Inner Cards */
         .card {
             background: #ffffff;
-            padding: 18px 20px;
+            padding: 20px 22px;
             border-radius: 20px;
-            margin-bottom: 18px;
+            margin-bottom: 20px;
             border: 2px solid #dcfce7;
             transition: transform 0.2s ease;
         }
@@ -212,7 +237,6 @@
             font-size: 0.85rem;
         }
 
-        /* Badges / Tags */
         .badge-container {
             display: flex;
             flex-wrap: wrap;
@@ -230,6 +254,14 @@
             border: 1px solid var(--main-mint);
         }
 
+        .dashboard-img {
+            width: 100%;
+            border-radius: 16px;
+            margin-top: 14px;
+            border: 2px solid var(--main-mint);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+
         footer {
             text-align: center;
             padding: 20px;
@@ -242,11 +274,20 @@
 <body>
 
 <div class="container">
+
+    <div class="lang-switch-container">
+        <button class="lang-btn" onclick="toggleLanguage()">
+            🌐 <span id="lang-btn-text">English</span>
+        </button>
+    </div>
+
     <header>
         <div class="header-title-box">✨ MATCHA MINT PORTFOLIO ✨</div>
         <h1>Huong Linh Vu 🍃</h1>
-        <div class="subtitle">Business Analytics Student • Product Strategy & Sustainability</div>
-        <p class="summary">
+        <div class="subtitle" data-vi="Sinh Viên Business Analytics • Chiến Lược Sản Phẩm & Bền Vững" data-en="Business Analytics Student • Product Strategy & Sustainability">
+            Sinh Viên Business Analytics • Chiến Lược Sản Phẩm & Bền Vững
+        </div>
+        <p class="summary" data-vi="Sinh viên năm 3 ngành Business Analytics tại Deakin University. Đam mê phân tích dữ liệu, chiến lược kinh doanh và sáng tạo giải pháp chuyển đổi số bền vững 🍀" data-en="Third-year Business Analytics student at Deakin University. Passionate about business strategy, digital transformation and sustainable innovation, with strengths in analytical problem-solving and research 🍀">
             Sinh viên năm 3 ngành Business Analytics tại Deakin University. Đam mê phân tích dữ liệu, chiến lược kinh doanh và sáng tạo giải pháp chuyển đổi số bền vững 🍀
         </p>
         <div class="contact-links">
@@ -257,43 +298,140 @@
     </header>
 
     <section>
-        <h2>🌿 Dự Án Nổi Bật (Featured Projects)</h2>
+        <h2 data-vi="🌿 Dự Án Nổi Bật (Featured Projects)" data-en="🌿 Featured Projects">🌿 Dự Án Nổi Bật (Featured Projects)</h2>
         
         <div class="card">
             <div class="card-header">
-                <span class="card-title">AfterCare - AI Post-Discharge Platform 💡</span>
+                <span class="card-title">AfterCare - AI Post-Discharge Care Platform 🏥💡</span>
                 <span class="date-badge">2026</span>
             </div>
-            <div class="card-subtitle">Vietnamese Students HackAIthon 2026 — Merit Prize (Top 8 / 210) ✨</div>
+            <div class="card-subtitle" data-vi="Vietnamese Students HackAIthon 2026 — Giải Khuyến Khích (Top 8 / 210) ✨" data-en="Vietnamese Students HackAIthon 2026 — Top 8 out of 210 (Merit Prize) ✨">
+                Vietnamese Students HackAIthon 2026 — Giải Khuyến Khích (Top 8 / 210) ✨
+            </div>
+            
+            <p style="margin: 10px 0; color: #166534; font-size: 0.95rem;" data-vi="Nền tảng AI hỗ trợ theo dõi và chăm sóc sức khỏe bệnh nhân sau khi xuất viện, kết hợp Bảng điều phối (Admin Dashboard) dành cho nhân viên y tế để giám sát chỉ số sinh hiệu theo thời gian thực." data-en="AI-powered healthcare platform for post-discharge patient care, integrating an Admin Dashboard for medical staff to monitor real-time vital signs.">
+                Nền tảng AI hỗ trợ theo dõi và chăm sóc sức khỏe bệnh nhân sau khi xuất viện, kết hợp Bảng điều phối (Admin Dashboard) dành cho nhân viên y tế để giám sát chỉ số sinh hiệu theo thời gian thực.
+            </p>
+
             <ul>
-                <li>Phụ trách Phân tích Nghiệp vụ (BA) & Chiến lược Sản phẩm cho nền tảng y tế ứng dụng AI.</li>
-                <li>Thực hiện nghiên cứu thị trường, phân tích đối thủ cạnh tranh và thu thập yêu cầu bài toán.</li>
-                <li>Định nghĩa các tính năng cốt lõi MVP và phối hợp cùng đội ngũ Developers.</li>
-                <li>Thuyết trình giải pháp chiến lược trước Mentors và Ban giám khảo cuộc thi.</li>
+                <li data-vi="Product Strategy & BA: Phụ trách phân tích bài toán, nghiên cứu thị trường và thiết kế luồng quy trình sản phẩm (User Flow) cho bản MVP." data-en="Product Strategy & BA: Led business analysis, market research, competitor analysis, and requirement gathering for the AI platform.">
+                    Product Strategy & BA: Phụ trách phân tích bài toán, nghiên cứu thị trường và thiết kế luồng quy trình sản phẩm (User Flow) cho bản MVP.
+                </li>
+                <li data-vi="Thiết kế Bảng Điều Phối (Admin Dashboard): Xây dựng giao diện quản lý danh sách bệnh nhân, tích hợp bộ lọc mức độ nguy cơ và hiển thị cảnh báo sức khỏe tự động (AI Alert: Nhịp tim, SpO2, Huyết áp)." data-en="Admin Dashboard Design: Defined core MVP features, patient list management, risk-level filtering, and real-time AI vital alerts (Heart Rate, SpO2, Blood Pressure).">
+                    Thiết kế Bảng Điều Phối (Admin Dashboard): Xây dựng giao diện quản lý danh sách bệnh nhân, tích hợp bộ lọc mức độ nguy cơ và hiển thị cảnh báo sức khỏe tự động (AI Alert: Nhịp tim, SpO2, Huyết áp).
+                </li>
+                <li data-vi="Phối hợp & Thuyết trình: Làm việc cùng đội ngũ Developers để hoàn thiện giao diện Dashboard và thuyết trình giải pháp trước Ban giám khảo." data-en="Collaboration & Pitching: Partnered with developers to build the MVP and pitched the full solution to mentors and judges.">
+                    Phối hợp & Thuyết trình: Làm việc cùng đội ngũ Developers để hoàn thiện giao diện Dashboard và thuyết trình giải pháp trước Ban giám khảo.
+                </li>
             </ul>
+
             <div class="badge-container">
                 <span class="badge">Business Analysis</span>
                 <span class="badge">Product Strategy</span>
-                <span class="badge">Market Research</span>
-                <span class="badge">Wireframing</span>
+                <span class="badge">UI/UX Wireframing</span>
+                <span class="badge">Dashboard Design</span>
+                <span class="badge">AI Healthtech</span>
             </div>
+
+            <img src="aftercare-dashboard.png" alt="AfterCare Admin Dashboard MVP" class="dashboard-img" onerror="this.style.display='none'">
         </div>
 
         <div class="card">
             <div class="card-header">
-                <span class="card-title">Dự Án "Share the Love, Send Warmth" 🎒</span>
+                <span class="card-title" data-vi="Dự Án 'Gửi Nắng Ấm, Trao Yêu Thương' 🎒" data-en="'Share the Love, Send Warmth' Project 🎒">Dự Án "Gửi Nắng Ấm, Trao Yêu Thương" 🎒</span>
                 <span class="date-badge">12/2023 - 02/2024</span>
             </div>
-            <div class="card-subtitle">Logistics Team Leader — Volunteer Project</div>
+            <div class="card-subtitle" data-vi="Trưởng Nhóm Logistics — Dự Án Tình Nguyện" data-en="Logistics Team Leader — Volunteer Project">Trưởng Nhóm Logistics — Dự Án Tình Nguyện</div>
             <ul>
-                <li>Điều phối hoạt động logistics và làm việc với nhà cung cấp hỗ trợ trường học tại Y Tý, Lào Cai.</li>
-                <li>Giám sát quá trình phân phát vật phẩm quyên góp đến các em nhỏ.</li>
+                <li data-vi="Điều phối hoạt động logistics và làm việc với nhà cung cấp hỗ trợ trường học tại Y Tý, Lào Cai." data-en="Coordinated logistics operations and supplier communication for a volunteer project supporting remote schools in Y Ty, Lao Cai.">
+                    Điều phối hoạt động logistics và làm việc với nhà cung cấp hỗ trợ trường học tại Y Tý, Lào Cai.
+                </li>
+                <li data-vi="Giám sát quá trình phân phát vật phẩm quyên góp đến các em nhỏ." data-en="Supervised donation distribution process for underprivileged children.">
+                    Giám sát quá trình phân phát vật phẩm quyên góp đến các em nhỏ.
+                </li>
             </ul>
         </div>
     </section>
 
     <section>
-        <h2>💼 Kinh Nghiệm Làm Việc (Experience)</h2>
+        <h2 data-vi="📚 Môn Học & Dự Án Bài Tập (Academic Projects)" data-en="📚 Academic Projects & Assignments">📚 Môn Học & Dự Án Bài Tập (Academic Projects)</h2>
+        
+        <div class="card">
+            <div class="card-header">
+                <span class="card-title">Airbnb Guest Satisfaction & Topic Modelling Analysis 🏡🤖</span>
+                <span class="date-badge">2026</span>
+            </div>
+            <div class="card-subtitle" data-vi="Môn: MIS373 – Trí Tuệ Nhân Tạo Trong Kinh Doanh | Deakin University" data-en="Unit: MIS373 – Artificial Intelligence for Business | Deakin University">
+                Môn: MIS373 – Trí Tuệ Nhân Tạo Trong Kinh Doanh | Deakin University
+            </div>
+            
+            <p style="margin: 10px 0; color: #166534; font-size: 0.95rem;" data-vi="Dự án phân tích dữ liệu trải nghiệm khách hàng của Airbnb tại Victoria nhằm xác định nguyên nhân gây không hài lòng và đề xuất giải pháp tối ưu dịch vụ cho chủ nhà (hosts)." data-en="Analytical project examining Airbnb Victoria review data to uncover drivers of guest dissatisfaction and formulate service improvement strategies for hosts.">
+                Dự án phân tích dữ liệu trải nghiệm khách hàng của Airbnb tại Victoria nhằm xác định nguyên nhân gây không hài lòng và đề xuất giải pháp tối ưu dịch vụ cho chủ nhà (hosts).
+            </p>
+
+            <ul>
+                <li data-vi="Xử lý ngôn ngữ tự nhiên (NLP): Sử dụng Python thực hiện Tokenisation, Stemming và Sentiment Analysis để phân tích hàng ngàn đánh giá của khách hàng." data-en="NLP Processing: Performed sentence-level tokenisation, stemming, and sentiment analysis on large-scale review text in Python.">
+                    Xử lý ngôn ngữ tự nhiên (NLP): Sử dụng Python thực hiện Tokenisation, Stemming và Sentiment Analysis để phân tích hàng ngàn đánh giá của khách hàng.
+                </li>
+                <li data-vi="Mô hình hóa chủ đề (LDA): Áp dụng Latent Dirichlet Allocation (LDA) để trích xuất các nhóm chủ đề chính liên quan đến trải nghiệm lưu trú." data-en="Topic Modelling: Applied Latent Dirichlet Allocation (LDA) to extract underlying themes across accommodation types.">
+                    Mô hình hóa chủ đề (LDA): Áp dụng Latent Dirichlet Allocation (LDA) để trích xuất các nhóm chủ đề chính liên quan đến trải nghiệm lưu trú.
+                </li>
+                <li data-vi="Trực quan hóa & Đề xuất: Phân tích xu hướng thị trường và sự khác biệt về kỳ vọng giữa các loại phòng để đưa ra đề xuất chiến lược cho Airbnb." data-en="Visualization & Strategy: Conducted EDA to map market distribution and formulated evidence-based recommendations for hosts.">
+                    Trực quan hóa & Đề xuất: Phân tích xu hướng thị trường và sự khác biệt về kỳ vọng giữa các loại phòng để đưa ra đề xuất chiến lược cho Airbnb.
+                </li>
+            </ul>
+
+            <div class="badge-container">
+                <span class="badge">Python</span>
+                <span class="badge">NLP & Text Mining</span>
+                <span class="badge">LDA Topic Modelling</span>
+                <span class="badge">Sentiment Analysis</span>
+                <span class="badge">EDA</span>
+            </div>
+
+            <div style="margin-top: 10px; font-size: 0.85rem; color: #15803d; font-style: italic;" data-vi="🔒 Full code notebook & báo cáo chi tiết được bảo mật để đảm bảo Liêm chính Học thuật (Academic Integrity). Vui lòng liên hệ qua email nếu bạn muốn trao đổi chi tiết về Case Study này." data-en="🔒 Full code notebook & detailed report are protected to maintain Academic Integrity. Please contact via email for further case study inquiries.">
+                🔒 Full code notebook & báo cáo chi tiết được bảo mật để đảm bảo Liêm chính Học thuật (Academic Integrity). Vui lòng liên hệ qua email nếu bạn muốn trao đổi chi tiết về Case Study này.
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <span class="card-title">House Price Prediction & Waste Classification with Deep Learning 🧠🤖</span>
+                <span class="date-badge">2026</span>
+            </div>
+            <div class="card-subtitle" data-vi="Môn: MIS373 – Trí Tuệ Nhân Tạo Trong Kinh Doanh | Deakin University" data-en="Unit: MIS373 – Artificial Intelligence for Business | Deakin University">
+                Môn: MIS373 – Trí Tuệ Nhân Tạo Trong Kinh Doanh | Deakin University
+            </div>
+            
+            <p style="margin: 10px 0; color: #166534; font-size: 0.95rem;" data-vi="Ứng dụng Mạng thần kinh nhân tạo (ANN) trong dự đoán giá nhà và Mạng thần kinh tích chập (CNN) trong phân loại hình ảnh rác thải tự động." data-en="Applied Artificial Neural Networks (ANN) for tabular house price regression and Convolutional Neural Networks (CNN) for automated waste image classification.">
+                Ứng dụng Mạng thần kinh nhân tạo (ANN) trong dự đoán giá nhà và Mạng thần kinh tích chập (CNN) trong phân loại hình ảnh rác thải tự động.
+            </p>
+
+            <ul>
+                <li data-vi="Task 1 - House Price Regression Model: Tiền xử lý tập dữ liệu 20,000 mẫu (skewness, outliers, normalization). Xây dựng & so sánh 8 kiến trúc Neural Network tối ưu bằng Adam Optimizer để đạt độ chính xác cao nhất (đánh giá qua MSE, MAE, MAPE, R²)." data-en="Task 1 - House Price Regression: Preprocessed 20,000 tabular records (outlier removal, normalisation). Built and benchmarked 8 Neural Network architectures using Adam optimizer and evaluated via MSE, MAE, MAPE, R².">
+                    Task 1 - House Price Regression Model: Tiền xử lý tập dữ liệu 20,000 mẫu (skewness, outliers, normalization). Xây dựng & so sánh 8 kiến trúc Neural Network tối ưu bằng Adam Optimizer để đạt độ chính xác cao nhất (đánh giá qua MSE, MAE, MAPE, R²).
+                </li>
+                <li data-vi="Task 2 - Computer Vision & Waste Classification: Thiết kế kiến trúc CNN nhiều lớp (Conv2D, MaxPooling, Dropout, Dense) nhận diện & phân loại hình ảnh rác thải tự động. Phân tích Confusion Matrix để tối ưu mô hình tránh Overfitting." data-en="Task 2 - Waste Image Classification: Developed multi-layer CNNs (Conv2D, MaxPooling, Dropout) for digital waste classification, analyzing Confusion Matrices to minimize overfitting.">
+                    Task 2 - Computer Vision & Waste Classification: Thiết kế kiến trúc CNN nhiều lớp (Conv2D, MaxPooling, Dropout, Dense) nhận diện & phân loại hình ảnh rác thải tự động. Phân tích Confusion Matrix để tối ưu mô hình tránh Overfitting.
+                </li>
+            </ul>
+
+            <div class="badge-container">
+                <span class="badge">Python</span>
+                <span class="badge">TensorFlow / Keras</span>
+                <span class="badge">Deep Learning (ANN & CNN)</span>
+                <span class="badge">Computer Vision</span>
+                <span class="badge">Model Evaluation</span>
+            </div>
+
+            <div style="margin-top: 10px; font-size: 0.85rem; color: #15803d; font-style: italic;" data-vi="🔒 Full code notebook & báo cáo chi tiết được bảo mật để đảm bảo Liêm chính Học thuật (Academic Integrity). Vui lòng liên hệ qua email nếu bạn muốn trao đổi chi tiết về Case Study này." data-en="🔒 Full code notebook & detailed report are protected to maintain Academic Integrity. Please contact via email for further case study inquiries.">
+                🔒 Full code notebook & báo cáo chi tiết được bảo mật để đảm bảo Liêm chính Học thuật (Academic Integrity). Vui lòng liên hệ qua email nếu bạn muốn trao đổi chi tiết về Case Study này.
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2 data-vi="💼 Kinh Nghiệm Làm Việc (Experience)" data-en="💼 Work Experience">💼 Kinh Nghiệm Làm Việc (Experience)</h2>
 
         <div class="card">
             <div class="card-header">
@@ -302,9 +440,15 @@
             </div>
             <div class="card-subtitle">FPT Digital — Hà Nội, Việt Nam</div>
             <ul>
-                <li>Nghiên cứu khung chuẩn ESG (GRI Standards) và thực tiễn báo cáo phát triển bền vững quốc tế.</li>
-                <li>Phân tích quy định ESG và xu hướng ngành Dược phẩm tại Việt Nam phục vụ tư vấn chiến lược.</li>
-                <li>Tổng hợp kết quả nghiên cứu và hỗ trợ xây dựng báo cáo gửi khách hàng.</li>
+                <li data-vi="Nghiên cứu khung chuẩn ESG (GRI Standards) và thực tiễn báo cáo phát triển bền vững quốc tế." data-en="Conducted desk research on ESG frameworks including GRI Standards and international sustainability reporting practices.">
+                    Nghiên cứu khung chuẩn ESG (GRI Standards) và thực tiễn báo cáo phát triển bền vững quốc tế.
+                </li>
+                <li data-vi="Phân tích quy định ESG và xu hướng ngành Dược phẩm tại Việt Nam phục vụ tư vấn chiến lược." data-en="Analysed ESG regulations and industry trends within Vietnam's pharmaceutical sector to support consulting recommendations.">
+                    Phân tích quy định ESG và xu hướng ngành Dược phẩm tại Việt Nam phục vụ tư vấn chiến lược.
+                </li>
+                <li data-vi="Tổng hợp kết quả nghiên cứu và hỗ trợ xây dựng báo cáo gửi khách hàng." data-en="Produced research findings and supported client deliverables through evidence-based analysis.">
+                    Tổng hợp kết quả nghiên cứu và hỗ trợ xây dựng báo cáo gửi khách hàng.
+                </li>
             </ul>
         </div>
 
@@ -315,27 +459,34 @@
             </div>
             <div class="card-subtitle">VnF (Vietnam Food) — TP. Hồ Chí Minh, Việt Nam</div>
             <ul>
-                <li>Hỗ trợ các sáng kiến phát triển bền vững liên quan đến giải pháp RetriV của VnF.</li>
-                <li>Hỗ trợ lưu trữ tài liệu, giao tiếp với các bên liên quan và điều phối dự án.</li>
-                <li>Tham gia hội thảo chuyên ngành để cập nhật xu hướng bền vững.</li>
+                <li data-vi="Hỗ trợ các sáng kiến phát triển bền vững liên quan đến giải pháp RetriV của VnF." data-en="Supported sustainability initiatives involving RetriV, VnF's nutrient recovery solution.">
+                    Hỗ trợ các sáng kiến phát triển bền vững liên quan đến giải pháp RetriV của VnF.
+                </li>
+                <li data-vi="Hỗ trợ lưu trữ tài liệu, giao tiếp với các bên liên quan và điều phối dự án." data-en="Assisted project teams in documentation, stakeholder communication and sustainability project coordination.">
+                    Hỗ trợ lưu trữ tài liệu, giao tiếp với các bên liên quan và điều phối dự án.
+                </li>
+                <li data-vi="Tham gia hội thảo chuyên ngành để cập nhật xu hướng bền vững." data-en="Participated in industry conferences to research sustainability trends and support knowledge sharing.">
+                    Tham gia hội thảo chuyên ngành để cập nhật xu hướng bền vững.
+                </li>
             </ul>
         </div>
     </section>
 
     <section>
-        <h2>🛠️ Kỹ Năng & Công Cụ (Skills & Tools)</h2>
+        <h2 data-vi="🛠️ Kỹ Năng & Công Cụ (Skills & Tools)" data-en="🛠️ Skills & Tools">🛠️ Kỹ Năng & Công Cụ (Skills & Tools)</h2>
         <div style="margin-bottom: 16px;">
-            <strong style="color: var(--dark-green);">Kỹ Năng Phân Tích:</strong>
+            <strong style="color: var(--dark-green);" data-vi="Kỹ Năng Phân Tích & Nghiệp Vụ:" data-en="Analytical & Business Skills:">Kỹ Năng Phân Tích & Nghiệp Vụ:</strong>
             <div class="badge-container">
                 <span class="badge">Business Analysis</span>
                 <span class="badge">Market Research</span>
                 <span class="badge">BPMN & EER Modelling</span>
-                <span class="badge">Agile & Scrum</span>
+                <span class="badge">Agile & Scrum Fundamentals</span>
                 <span class="badge">Project Coordination</span>
+                <span class="badge">Stakeholder Communication</span>
             </div>
         </div>
         <div>
-            <strong style="color: var(--dark-green);">Công Cụ Chuyên Môn:</strong>
+            <strong style="color: var(--dark-green);" data-vi="Công Cụ Chuyên Môn:" data-en="Technical Tools:">Công Cụ Chuyên Môn:</strong>
             <div class="badge-container">
                 <span class="badge">Power BI</span>
                 <span class="badge">SQL</span>
@@ -349,10 +500,10 @@
     </section>
 
     <section>
-        <h2>🎓 Học Vấn & Chứng Chỉ (Education)</h2>
+        <h2 data-vi="🎓 Học Vấn & Chứng Chỉ (Education)" data-en="🎓 Education & Certifications">🎓 Học Vấn & Chứng Chỉ (Education)</h2>
         <div class="card">
             <div class="card-header">
-                <span class="card-title">Bachelor of Business Analytics 🏫</span>
+                <span class="card-title" data-vi="Cử Nhân Phân Tích Kinh Doanh (Bachelor of Business Analytics) 🏫" data-en="Bachelor of Business Analytics 🏫">Cử Nhân Phân Tích Kinh Doanh (Bachelor of Business Analytics) 🏫</span>
                 <span class="date-badge">2024 - 2027</span>
             </div>
             <div class="card-subtitle">Deakin University — Burwood, VIC, Australia</div>
@@ -361,7 +512,7 @@
             <ul>
                 <li><strong>Power BI Essential Training</strong> — LinkedIn Learning (04/2025)</li>
                 <li><strong>Foundations of Digital Marketing & E-Commerce</strong> — Coursera (11/2023)</li>
-                <li><strong>ISO 22301:2019 Essentials of BCMS</strong> — Alison (10/2023)</li>
+                <li><strong>ISO 22301:2019 Essentials of Business Continuity Management Systems (BCMS)</strong> — Alison (10/2023)</li>
                 <li><strong>Business Analysis & Process Management</strong> — Coursera (10/2023)</li>
             </ul>
         </div>
@@ -371,6 +522,23 @@
         <p>🌱 Mint Matcha Portfolio • Built with 🍀 for GitHub Pages 🌱</p>
     </footer>
 </div>
+
+<script>
+    let currentLang = 'vi';
+
+    function toggleLanguage() {
+        currentLang = currentLang === 'vi' ? 'en' : 'vi';
+        
+        // Cập nhật nhãn nút bấm
+        document.getElementById('lang-btn-text').innerText = currentLang === 'vi' ? 'English' : 'Tiếng Việt';
+        
+        // Cập nhật tất cả các phần tử có thuộc tính data-vi / data-en
+        const elements = document.querySelectorAll('[data-vi][data-en]');
+        elements.forEach(el => {
+            el.innerHTML = el.getAttribute(`data-${currentLang}`);
+        });
+    }
+</script>
 
 </body>
 </html>
