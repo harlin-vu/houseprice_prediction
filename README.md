@@ -1,75 +1,58 @@
-# AI Applications for Prediction and Computer Vision
+# House Price Prediction using Deep Learning
 
-Deep Learning | Neural Networks | Computer Vision | Python
+Deep Learning | Machine Learning | Regression | Python
 
 ## Overview
 
-This project explores two practical applications of Artificial Intelligence using deep learning techniques.
+Accurate house price prediction plays an important role in supporting property valuation, investment planning, and real estate decision-making. This project explores the application of deep learning techniques to estimate residential property prices using structured housing data.
 
-The first task develops neural network models to predict residential property prices based on housing characteristics. The second task investigates image classification using Artificial Neural Networks (ANNs) and Convolutional Neural Networks (CNNs) for automated waste sorting.
-
-Together, these projects demonstrate the application of AI to both structured tabular data and unstructured image data.
+The project investigates how different neural network architectures influence predictive performance and demonstrates a complete machine learning workflow, from data preprocessing to model evaluation.
 
 ---
 
-## Project 1 — House Price Prediction
+## Business Objectives
 
-### Business Problem
+- Develop predictive models for residential property prices.
+- Compare multiple deep learning architectures for regression tasks.
+- Evaluate the impact of model design on prediction performance.
+- Demonstrate the application of AI techniques to real-world business problems.
 
-Accurate property valuation supports informed decision-making for buyers, sellers, and real estate professionals. This project investigates how different neural network architectures affect prediction accuracy for house prices.
+---
 
-### Methodology
+## Methodology
 
-- Data Cleaning and Preprocessing
+The project follows a structured machine learning workflow:
+
+- Data Exploration
+- Data Cleaning
 - Outlier Removal
-- Feature Normalisation
-- Multiple Neural Network Architectures
-- Model Evaluation using:
-  - MAE
-  - RMSE
-  - MAPE
-  - Correlation
-  - R²
-
-### Key Results
-
-- Developed and compared eight prediction models.
-- Three-layer neural networks achieved the strongest predictive performance.
-- The best model (NN4) achieved:
-  - Correlation: **0.919**
-  - R²: **0.845**
-  - MAE: **$71,705**
-- Increasing model complexity beyond three hidden layers did not improve performance.
+- Feature Engineering
+- Data Normalisation
+- Deep Learning Model Development
+- Model Evaluation
+- Performance Comparison
 
 ---
 
-## Project 2 — Waste Image Classification
+## Key Outcomes
 
-### Business Problem
+The project demonstrates that:
 
-Automated waste classification can improve recycling efficiency and reduce manual sorting. This project evaluates different deep learning architectures for classifying waste images into six categories.
+- Effective data preprocessing improves prediction performance.
+- Neural network architecture has a significant impact on model accuracy.
+- Increasing model complexity does not necessarily produce better results.
+- Well-designed deep learning models can provide reliable estimates for residential property prices.
 
-### Methodology
+---
 
-- Image Preprocessing
-- Data Normalisation
-- Artificial Neural Networks (ANN)
-- Convolutional Neural Networks (CNN)
-- Performance Evaluation using:
-  - Accuracy
-  - Cohen's Kappa
-  - Precision
-  - Recall
-  - F1-score
+## Business Applications
 
-### Key Results
+The developed approach can support:
 
-- Compared four ANN models and six CNN models.
-- CNN models significantly outperformed ANN models.
-- The best model (CNN4) achieved:
-  - Test Accuracy: **69.53%**
-  - Cohen's Kappa: **0.631**
-- Vegetation images were classified most accurately, while plastic and metal remained the most challenging categories.
+- Property valuation
+- Real estate investment analysis
+- Housing market research
+- Decision support for property pricing
 
 ---
 
@@ -77,10 +60,10 @@ Automated waste classification can improve recycling efficiency and reduce manua
 
 - Python
 - TensorFlow / Keras
-- NumPy
 - Pandas
-- Matplotlib
+- NumPy
 - Scikit-learn
+- Matplotlib
 
 ---
 
@@ -88,13 +71,17 @@ Automated waste classification can improve recycling efficiency and reduce manua
 
 - Data Preprocessing
 - Feature Engineering
-- Neural Networks
+- Regression Modelling
 - Deep Learning
-- Computer Vision
+- Neural Network Design
 - Model Evaluation
-- Hyperparameter Tuning
 - Business Analytics
-- AI Model Comparison
+
+---
+
+## Repository
+
+The implementation code is intentionally kept private as it was developed as part of university coursework. This repository highlights the project objectives, methodology, and business outcomes for portfolio purposes.
 
 ---
 
